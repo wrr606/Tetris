@@ -6,16 +6,18 @@
 - hard drop(硬降)
 - 順逆時鐘旋轉、180度旋轉
 
-製作思路參考：
+#### 製作思路參考：
 
 https://reurl.cc/OV24AX
 
 https://reurl.cc/yk5MrO
 
-程式碼參考：
+#### 程式碼參考：
 
 https://youtu.be/rAUn1Lom6dw
 
-參考程度20%
+參考她的俄羅斯方塊程式是**如何刷新畫面及方塊下落作法**
 
-使用ChatGPT查詢CSS參數、JS 內建function功能及使用，只用來查詢。
+參考程度**20%**
+
+使用ChatGPT**查詢CSS參數、JS 內建function功能及使用**，只用來查詢。
