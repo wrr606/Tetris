@@ -1,0 +1,144 @@
+body {
+  background-image: url(starry.jpeg);
+  background-position: center;
+}
+
+.all {
+  display: flex;
+}
+
+.hold {
+  width: 175px;
+  height: 175px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 50px;
+  margin-left: auto;
+  background-color: black;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left {
+  text-align: center;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.hold div {
+  height: 35px;
+  width: 35px;
+  display: block;
+}
+
+.next {
+  text-align: center;
+  width: 175px;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-left: 0;
+  background-color: black;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.next div {
+  height: 35px;
+  width: 35px;
+  display: block;
+}
+
+.grid {
+  width: 350px;
+  height: 700px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 50px;
+  margin-left: 0;
+  background-color: black;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  height: 35px;
+  width: 35px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+}
+
+.state {
+  width: 175px;
+  height: 100px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: auto;
+  background-color: black;
+  border: 4px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 35px;
+  color: white;
+  font-family: "微軟正黑體";
+}
+
+.instruct {
+  width: 182px;
+  height: 100px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: auto;
+  background-color: black;
+  border: 10px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 35px;
+  color: white;
+  font-family: "微軟正黑體";
+}
+
+.instruct:hover {
+  background-color: rgba(255, 255, 255, 0.416);
+}
+
+.instruct:active {
+  background-color: rgba(255, 255, 255, 0.699);
+}
+
+.i {
+  background-color: #00FFFF;
+}
+
+.j {
+  background-color: #0000FF;
+}
+
+.l {
+  background-color: #FFA500;
+}
+
+.o {
+  background-color: #FFFF00;
+}
+
+.s {
+  background-color: #00FF00;
+}
+
+.t {
+  background-color: #800080;
+}
+
+.z {
+  background-color: #FF0000;
+}
+
+.preview {
+  background-color: rgba(255, 255, 255, 0.342);
+}
