@@ -6,6 +6,9 @@
 - hard drop(硬降)
 - 順逆時鐘旋轉、180度旋轉
 
+### 網站：
+https://wrr606.github.io/Tetris/tetris.html
+
 ### 製作思路參考：
 
 https://reurl.cc/OV24AX
