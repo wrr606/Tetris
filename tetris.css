@@ -160,30 +160,114 @@ body {
 }
 
 .i {
+  position: relative;
+  background-color: #00ecec;
+}
+
+.i::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #00FFFF;
 }
 
 .j {
+  position: relative;
+  background-color: #0000cc;
+}
+
+.j::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #0000FF;
 }
 
 .l {
+  position: relative;
+  background-color: #cc8400;
+}
+
+.l::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #FFA500;
 }
 
 .o {
+  position: relative;
+  background-color: #cccc00;
+}
+
+.o::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #FFFF00;
 }
 
 .s {
+  position: relative;
+  background-color: #00cc00;
+}
+
+.s::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #00FF00;
 }
 
 .t {
+  position: relative;
+  background-color: #660066;
+}
+
+.t::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #800080;
 }
 
 .z {
+  position: relative;
+  background-color: #cc0000;
+}
+
+.z::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: #FF0000;
 }
 
