@@ -67,13 +67,27 @@ let tetris_5x5 = {
   ],
 };
 
+//每個方塊的起始位置offset設定
+let begin_station = {
+  "i": 3,
+  "o": 4,
+  "j": 3,
+  "l": 3,
+  "s": 3,
+  "t": 3,
+  "z": 3,
+};
+
 let current = null,
   next = null,
   hold_temp = null,
   sequence = "",
   offset = 3,
   rotate = 0,
-  can_hold = true;
+  can_hold = true,
+  down = true,
+  setTimeout_time = 1000,
+  speed=1000;
 let grids = Array.from(document.querySelectorAll(".grid div"));
 let hold_grids = Array.from(document.querySelectorAll(".hold div"));
 let next_grids = Array.from(document.querySelectorAll(".next div"));
@@ -107,9 +121,15 @@ current = tetris[sequence[0]];
 
 //每個方塊的起始位置創建
 function creat_tetris() {
-  grids = Array.from(document.querySelectorAll(".grid div"));
-  hold_grids = Array.from(document.querySelectorAll(".hold div"));
-  next_grids = Array.from(document.querySelectorAll(".next div"));
+  setTimeout_time = speed;
+  for (let i of hold_grids) {
+    i.classList.remove("gray");
+  }
+  if (hold_temp) {
+    for (let i of tetris_5x5[hold_temp][0]) {
+      hold_grids[i + 6].classList.add(`${hold_temp}`);
+    }
+  }
   rotate = 0;
   if (sequence.length <= 7) {
     let s = "loszijt";
@@ -121,11 +141,11 @@ function creat_tetris() {
   }
   if (!current) {
     current = tetris[sequence[0]];
-    offset = 3;
+    offset = begin_station[sequence[0]];
   } else {
     sequence = sequence.substring(1);
     current = tetris[sequence[0]];
-    offset = 3;
+    offset = begin_station[sequence[0]];
   }
   next_tetris();
   draw_grids();
@@ -151,7 +171,9 @@ creat_tetris();
 //隨時間下降(重力)
 function tetrdown() {
   undraw_grids();
-  offset += 10;
+  if (down) {
+    offset += 10;
+  }
   draw_grids();
   freeze();
 }
@@ -161,27 +183,42 @@ function freeze() {
   let bool = true;
   for (let element of current[rotate]) {
     if (element + offset + 10 >= 200) {
-      current[rotate].forEach((index) => {
-        grids[index + offset].classList.add(`ed`);
-      });
       bool = false;
-      eliminate_line(), can_hold = true;
-      creat_tetris();
+      delay();
       break;
-    } else {
-      if (grids[element + offset + 10].classList.contains(`ed`)) {
+    } else if (grids[element + offset + 10].classList.contains(`ed`)) {
+      bool = false;
+      delay();
+      break;
+    }
+  }
+  preview();
+  return bool;
+}
+
+//設定1秒後還符合條件
+function delay() {
+  down = false;
+  setTimeout(function () {
+    for (let element of current[rotate]) {
+      if (element + offset + 10 >= 200) {
         current[rotate].forEach((index) => {
           grids[index + offset].classList.add(`ed`);
         });
-        bool = false;
+        eliminate_line(), can_hold = true;
+        creat_tetris();
+        break;
+      } else if (grids[element + offset + 10].classList.contains(`ed`)) {
+        current[rotate].forEach((index) => {
+          grids[index + offset].classList.add(`ed`);
+        });
         eliminate_line(), can_hold = true;
         creat_tetris();
         break;
       }
     }
-  }
-  preview(), gameover();
-  return bool;
+    preview(), gameover(), down = true;
+  }, setTimeout_time);
 }
 
 //Hold功能
@@ -189,6 +226,7 @@ function hold() {
   for (let i of hold_grids) {
     for (let j of "loszijt") {
       i.classList.remove(j);
+      i.classList.remove("gray");
     }
   }
   if (hold_temp) {
@@ -197,15 +235,13 @@ function hold() {
     sequence = hold_temp + sequence.substring(1);
     hold_temp = temp;
     sequence = sequence[0] + sequence;
-    can_hold = false;
-    creat_tetris();
   } else {
     hold_temp = sequence[0];
-    creat_tetris();
-    can_hold = false;
   }
+  can_hold = false;
+  creat_tetris();
   for (let i of tetris_5x5[hold_temp][0]) {
-    hold_grids[i + 6].classList.add(`${hold_temp}`);
+    hold_grids[i + 6].classList.add(`gray`);
   }
 }
 
@@ -302,7 +338,7 @@ function click_space() {
     }
   }
   offset += width;
-  gameover();
+  gameover(), setTimeout_time = 0;
 }
 
 //是否可以右移條件判斷
@@ -341,7 +377,7 @@ function gameover() {
       document.querySelector(".state").innerHTML = "GAME\nOVER";
       setTimeout(function () {
         document.querySelector(".state").innerHTML = "";
-      }, 2000);
+      }, 1500);
       reset();
       return;
     }
@@ -359,11 +395,10 @@ function reset() {
 function startTimer() {
   timer = setInterval(function () {
     // 要執行的程式碼
-    freeze();
     tetrdown();
     preview();
     gameover();
-  }, 800);
+  }, speed);
 }
 
 //判斷旋轉時是否合理
@@ -431,7 +466,9 @@ window.addEventListener("keydown", function (input_key) {
     }
   }
   if (input_key.code == "ArrowDown") {
-    offset += 10;
+    if (down) {
+      offset += 10;
+    }
   }
   if (input_key.code == "Space") {
     click_space();
