@@ -87,7 +87,7 @@ let current = null,
   can_hold = true,
   down = true,
   setTimeout_time = 1000,
-  speed=1000;
+  speed = 700;
 let grids = Array.from(document.querySelectorAll(".grid div"));
 let hold_grids = Array.from(document.querySelectorAll(".hold div"));
 let next_grids = Array.from(document.querySelectorAll(".next div"));
@@ -121,9 +121,12 @@ current = tetris[sequence[0]];
 
 //每個方塊的起始位置創建
 function creat_tetris() {
-  setTimeout_time = speed;
+  setTimeout_time = 1000;
   for (let i of hold_grids) {
-    i.classList.remove("gray");
+    for (let j of "loszijt") {
+      i.classList.remove(j);
+      i.classList.remove("gray");
+    }
   }
   if (hold_temp) {
     for (let i of tetris_5x5[hold_temp][0]) {
@@ -178,7 +181,7 @@ function tetrdown() {
   freeze();
 }
 
-//方塊固定條件判斷
+//初步方塊固定條件判斷
 function freeze() {
   let bool = true;
   for (let element of current[rotate]) {
@@ -196,7 +199,7 @@ function freeze() {
   return bool;
 }
 
-//設定1秒後還符合條件
+//設定1秒後符合固定條件就結凍方塊
 function delay() {
   down = false;
   setTimeout(function () {
@@ -386,6 +389,7 @@ function gameover() {
 
 //重製遊戲
 function reset() {
+  hold_temp = null;
   begin();
   current = null, sequence = "", can_hold = true;
   creat_tetris();
@@ -491,3 +495,55 @@ document.querySelector(".instruct").addEventListener("click", function () {
     `按鍵介紹\n\n方向鍵↑ 順時針轉動\n\n方向鍵↓ soft drop(軟降)\n\n方向鍵← 向左移動\n\n方向鍵→ 向右移動\n\nW鍵 逆時針轉動\n\nShift鍵 Hold功能\n\n空白鍵 Hard drop(硬降)`,
   );
 });
+
+//速度調整按鈕*3
+document.querySelector("#speed1").addEventListener("click", function () {
+  for (let i = 1; i < 4; i++) {
+    if (
+      document.querySelector(`#speed${i}`).classList.contains(`in_this_speed`)
+    ) {
+      document.querySelector(`#speed${i}`).classList.remove(`in_this_speed`);
+      document.querySelector(`#speed${i}`).classList.add(`otherspeed`);
+    }
+  }
+  document.querySelector(`#speed1`).classList.remove(`otherspeed`);
+  document.querySelector(`#speed1`).classList.add(`in_this_speed`);
+  speed=700;
+  reset_Timer();
+});
+
+document.querySelector("#speed2").addEventListener("click", function () {
+  for (let i = 1; i < 4; i++) {
+    if (
+      document.querySelector(`#speed${i}`).classList.contains(`in_this_speed`)
+    ) {
+      document.querySelector(`#speed${i}`).classList.remove(`in_this_speed`);
+      document.querySelector(`#speed${i}`).classList.add(`otherspeed`);
+    }
+  }
+  document.querySelector(`#speed2`).classList.remove(`otherspeed`);
+  document.querySelector(`#speed2`).classList.add(`in_this_speed`);
+  speed=250;
+  reset_Timer();
+});
+
+document.querySelector("#speed3").addEventListener("click", function () {
+  for (let i = 1; i < 4; i++) {
+    if (
+      document.querySelector(`#speed${i}`).classList.contains(`in_this_speed`)
+    ) {
+      document.querySelector(`#speed${i}`).classList.remove(`in_this_speed`);
+      document.querySelector(`#speed${i}`).classList.add(`otherspeed`);
+    }
+  }
+  document.querySelector(`#speed3`).classList.remove(`otherspeed`);
+  document.querySelector(`#speed3`).classList.add(`in_this_speed`);
+  speed=100;
+  reset_Timer();
+});
+
+//重置下落速度
+function reset_Timer() {
+  clearInterval(timer);
+  startTimer();
+}

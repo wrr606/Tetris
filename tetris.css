@@ -111,6 +111,54 @@ body {
   background-color: rgba(255, 255, 255, 0.699);
 }
 
+.otherspeed{
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: auto;
+  background-color: black;
+  border: 5px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 35px;
+  color: white;
+  font-family: "微軟正黑體";
+}
+
+.otherspeed:hover {
+  background-color: rgba(255, 255, 255, 0.416);
+}
+
+.otherspeed:active {
+  background-color: rgb(0, 225, 255)
+}
+
+.in_this_speed{
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: auto;
+  background-color: rgb(62, 233, 255);
+  border: 5px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 35px;
+  color: white;
+  font-family: "微軟正黑體";
+}
+
+.in_this_speed:hover {
+  background-color: rgba(255, 255, 255, 0.416);
+}
+
+.in_this_speed:active {
+  background-color: rgba(255, 255, 255, 0.699);
+}
+
 .i {
   background-color: #00FFFF;
 }
