@@ -87,7 +87,8 @@ let current = null,
   can_hold = true,
   down = true,
   setTimeout_time = 1000,
-  speed = 700;
+  speed = 700,
+  garbage = false;
 let grids = Array.from(document.querySelectorAll(".grid div"));
 let hold_grids = Array.from(document.querySelectorAll(".hold div"));
 let next_grids = Array.from(document.querySelectorAll(".next div"));
@@ -508,7 +509,7 @@ document.querySelector("#speed1").addEventListener("click", function () {
   }
   document.querySelector(`#speed1`).classList.remove(`otherspeed`);
   document.querySelector(`#speed1`).classList.add(`in_this_speed`);
-  speed=700;
+  speed = 700;
   reset_Timer();
 });
 
@@ -523,7 +524,7 @@ document.querySelector("#speed2").addEventListener("click", function () {
   }
   document.querySelector(`#speed2`).classList.remove(`otherspeed`);
   document.querySelector(`#speed2`).classList.add(`in_this_speed`);
-  speed=250;
+  speed = 250;
   reset_Timer();
 });
 
@@ -538,7 +539,7 @@ document.querySelector("#speed3").addEventListener("click", function () {
   }
   document.querySelector(`#speed3`).classList.remove(`otherspeed`);
   document.querySelector(`#speed3`).classList.add(`in_this_speed`);
-  speed=100;
+  speed = 100;
   reset_Timer();
 });
 
@@ -547,3 +548,15 @@ function reset_Timer() {
   clearInterval(timer);
   startTimer();
 }
+
+//垃圾行按鈕
+document.querySelector("#garbage").addEventListener("click", function () {
+  document.querySelector(`#garbage`).classList.remove(`nonchosen`);
+  document.querySelector(`#garbage`).classList.remove(`chosen`);
+  garbage = !garbage;
+  if (garbage) {
+    document.querySelector(`#garbage`).classList.add(`nonchosen`);
+  } else {
+    document.querySelector(`#garbage`).classList.add(`chosen`);
+  }
+});

@@ -159,6 +159,51 @@ body {
   background-color: rgba(255, 255, 255, 0.699);
 }
 
+
+.nonchosen{
+  width: 140px;
+  height: 70px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: auto;
+  background-color: black;
+  border: 5px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 35px;
+  color: white;
+  font-family: "微軟正黑體";
+}
+
+.nonchosen:hover {
+  background-color: rgba(255, 255, 255, 0.416);
+}
+
+.nonchosen:active {
+  background-color: rgb(0, 225, 255)
+}
+
+.chosen{
+  width: 140px;
+  height: 70px;
+  text-align: center;
+  margin-right: 0;
+  margin-top: 0;
+  margin-left: auto;
+  background-color: rgb(62, 233, 255);
+  border: 5px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 35px;
+  color: white;
+  font-family: "微軟正黑體";
+}
+
+.chosen:active {
+  background-color: rgba(255, 255, 255, 0.699);
+}
+
 .i {
   position: relative;
   background-color: #00ecec;
@@ -241,7 +286,7 @@ body {
 
 .t {
   position: relative;
-  background-color: #660066;
+  background-color: #ba00ba;
 }
 
 .t::before {
@@ -252,7 +297,7 @@ body {
   transform: translate(-50%, -50%);
   height: 80%;
   width: 80%;
-  background-color: #800080;
+  background-color: #d700d7;
 }
 
 .z {
@@ -272,9 +317,34 @@ body {
 }
 
 .gray{
-  background-color: gray;
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.603);
+}
+
+.gray::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
+  background-color: rgba(128, 128, 128, 0.692);
 }
 
 .preview {
+  position: relative;
+  opacity:50%;
+  background-color: rgba(255, 255, 255, 0.596);
+}
+
+.preview::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80%;
+  width: 80%;
   background-color: rgba(255, 255, 255, 0.342);
 }
