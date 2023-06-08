@@ -190,7 +190,10 @@ function freeze() {
       bool = false;
       delay();
       break;
-    } else if (grids[element + offset + 10].classList.contains(`ed`)) {
+    } else if (
+      grids[element + offset + 10].classList.contains(`ed`) ||
+      grids[element + offset + 10].classList.contains(`garbage`)
+    ) {
       bool = false;
       delay();
       break;
@@ -212,7 +215,10 @@ function delay() {
         eliminate_line(), can_hold = true;
         creat_tetris();
         break;
-      } else if (grids[element + offset + 10].classList.contains(`ed`)) {
+      } else if (
+        grids[element + offset + 10].classList.contains(`ed`) ||
+        grids[element + offset + 10].classList.contains(`garbage`)
+      ) {
         current[rotate].forEach((index) => {
           grids[index + offset].classList.add(`ed`);
         });
@@ -277,7 +283,10 @@ function preview() {
         bool = false;
         break;
       }
-      if (grids[i + offset + width].classList.contains(`ed`)) {
+      if (
+        grids[i + offset + width].classList.contains(`ed`) ||
+        grids[i + offset + width].classList.contains(`garbage`)
+      ) {
         width -= 10;
         bool = false;
         break;
@@ -298,10 +307,14 @@ function preview() {
 
 //消行條件判斷
 function eliminate_line() {
+  let line_number = 0;
   for (let i of current[rotate]) {
     let line_eliminate = true, rang = Math.floor((i + offset) / 10) * 10;
     for (let j = rang; j <= rang + 9; j++) {
-      if (!(grids[j].classList.contains(`ed`))) {
+      if (
+        !(grids[j].classList.contains(`ed`)) &&
+        !(grids[j].classList.contains(`garbage`))
+      ) {
         line_eliminate = false;
         break;
       }
@@ -310,16 +323,44 @@ function eliminate_line() {
       }
     }
     if (line_eliminate) {
+      line_number++;
       for (let k = rang; k <= rang + 9; k++) {
         grids[k].remove();
       }
       let grid = document.querySelector(".grid");
-      for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
         let temp = document.createElement("div");
         grid.insertBefore(temp, grid.firstChild);
       }
       grids = Array.from(document.querySelectorAll(".grid div"));
     }
+  }
+  if (garbage) {
+    generate_garbage_line(line_number);
+  }
+}
+
+//生成垃圾行
+function generate_garbage_line(line_number) {
+  let location = Math.floor(Math.random() * 10);
+  if (line_number % 4 != 0) {
+    line_number--;
+  }
+  for (let i = 0; i < line_number; i++) {
+    for (let k = 0; k <= 9; k++) {
+      grids[k].remove();
+    }
+    let grid = document.querySelector(".grid");
+    for (let j = 0; j < 10; j++) {
+      let temp = document.createElement("div");
+      if (j == location) {
+        grid.appendChild(temp);
+      } else {
+        temp.classList.add(`garbage`);
+        grid.appendChild(temp);
+      }
+    }
+    grids = Array.from(document.querySelectorAll(".grid div"));
   }
 }
 
@@ -334,7 +375,10 @@ function click_space() {
         bool = false;
         break;
       }
-      if (grids[i + offset + width].classList.contains(`ed`)) {
+      if (
+        grids[i + offset + width].classList.contains(`ed`) ||
+        grids[i + offset + width].classList.contains(`garbage`)
+      ) {
         width -= 10;
         bool = false;
         break;
@@ -351,7 +395,10 @@ function R_freeze() {
     if ((element + offset) % 10 == 9) {
       return false;
     } else {
-      if (grids[element + offset + 1].classList.contains(`ed`)) {
+      if (
+        grids[element + offset + 1].classList.contains(`ed`) ||
+        grids[element + offset + 1].classList.contains(`garbage`)
+      ) {
         return false;
       }
     }
@@ -365,7 +412,10 @@ function L_freeze() {
     if ((element + offset) % 10 == 0) {
       return false;
     } else {
-      if (grids[element + offset - 1].classList.contains(`ed`)) {
+      if (
+        grids[element + offset - 1].classList.contains(`ed`) ||
+        grids[element + offset - 1].classList.contains(`garbage`)
+      ) {
         return false;
       }
     }
@@ -377,7 +427,10 @@ function L_freeze() {
 function gameover() {
   let s = "loszijt";
   for (let i of current[rotate]) {
-    if (grids[i + offset].classList.contains(`ed`)) {
+    if (
+      grids[i + offset].classList.contains(`ed`) ||
+      grids[i + offset].classList.contains(`garbage`)
+    ) {
       document.querySelector(".state").innerHTML = "GAME\nOVER";
       setTimeout(function () {
         document.querySelector(".state").innerHTML = "";
@@ -425,7 +478,10 @@ function canrotate(rotate_temp) {
     }
   }
   for (let element of current[rotate_temp]) {
-    if (grids[element + offset].classList.contains(`ed`)) {
+    if (
+      grids[element + offset].classList.contains(`ed`) ||
+      grids[element + offset].classList.contains(`garbage`)
+    ) {
       return false;
     }
   }
@@ -555,8 +611,8 @@ document.querySelector("#garbage").addEventListener("click", function () {
   document.querySelector(`#garbage`).classList.remove(`chosen`);
   garbage = !garbage;
   if (garbage) {
-    document.querySelector(`#garbage`).classList.add(`nonchosen`);
-  } else {
     document.querySelector(`#garbage`).classList.add(`chosen`);
+  } else {
+    document.querySelector(`#garbage`).classList.add(`nonchosen`);
   }
 });
