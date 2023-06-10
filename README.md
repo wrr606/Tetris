@@ -27,6 +27,6 @@ https://github.com/kubowania/Tetris-Basic
 
 參考她的俄羅斯方塊程式是**如何刷新畫面及方塊下落作法**
 
-參考程度**20%**
+參考程度**15%**
 <br><br><br>
 使用ChatGPT**查詢CSS參數、JS 內建function功能及使用**，只用來查詢。
