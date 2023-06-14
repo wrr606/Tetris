@@ -103,6 +103,10 @@ body {
   font-family: "微軟正黑體";
 }
 
+.instruct:focus {
+  outline: none;
+}
+
 .instruct:hover {
   background-color: rgba(255, 255, 255, 0.416);
 }

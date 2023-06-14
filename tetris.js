@@ -551,6 +551,7 @@ document.querySelector(".instruct").addEventListener("click", function () {
   alert(
     `按鍵介紹\n\n方向鍵↑ 順時針轉動\n\n方向鍵↓ soft drop(軟降)\n\n方向鍵← 向左移動\n\n方向鍵→ 向右移動\n\nW鍵 逆時針轉動\n\nShift鍵 Hold功能\n\n空白鍵 Hard drop(硬降)`,
   );
+  this.blur();
 });
 
 //速度調整按鈕*3
@@ -567,6 +568,7 @@ document.querySelector("#speed1").addEventListener("click", function () {
   document.querySelector(`#speed1`).classList.add(`in_this_speed`);
   speed = 700;
   reset_Timer();
+  this.blur();
 });
 
 document.querySelector("#speed2").addEventListener("click", function () {
@@ -582,6 +584,7 @@ document.querySelector("#speed2").addEventListener("click", function () {
   document.querySelector(`#speed2`).classList.add(`in_this_speed`);
   speed = 250;
   reset_Timer();
+  this.blur();
 });
 
 document.querySelector("#speed3").addEventListener("click", function () {
@@ -597,6 +600,7 @@ document.querySelector("#speed3").addEventListener("click", function () {
   document.querySelector(`#speed3`).classList.add(`in_this_speed`);
   speed = 100;
   reset_Timer();
+  this.blur();
 });
 
 //重置下落速度
@@ -615,4 +619,5 @@ document.querySelector("#garbage").addEventListener("click", function () {
   } else {
     document.querySelector(`#garbage`).classList.add(`nonchosen`);
   }
+  this.blur();
 });
