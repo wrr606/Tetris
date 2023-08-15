@@ -30,4 +30,3 @@ https://github.com/kubowania/Tetris-Basic
 參考程度**15%**
 <br><br><br>
 使用ChatGPT**查詢CSS參數、JS 內建function功能及使用**，只用來查詢。
-test
