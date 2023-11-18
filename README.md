@@ -8,8 +8,8 @@
 - preview(能夠預覽hard drop後的方塊)
 - 順逆時鐘旋轉、180度旋轉
 
-### 網站：
-https://wrr606.github.io/Tetris/tetris.html
+### 前端展示：
+https://wrr606.github.io/Tetris/Tetris_only_front_end/tetris.html
 
 ### 製作思路參考：
 
