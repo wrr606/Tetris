@@ -9,7 +9,7 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
 - 排名系統（將最高分數與其他玩家排名）
 - 支持訪客登入
 
-### 展示
+### 展示：
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever1.png)
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever2.png)
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever3.png)
