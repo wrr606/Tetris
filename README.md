@@ -29,8 +29,7 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
 - 順逆時鐘旋轉、180 度旋轉
 
 ### 前端展示：
-網站：https://wrr606.github.io/Tetris/
-Tetris_only_front_end/tetris.html
+網站：https://wrr606.github.io/Tetris/Tetris_only_front_end/tetris.html
 
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/front.png)
 
