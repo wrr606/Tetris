@@ -10,10 +10,10 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
 - 支持訪客登入
 
 ### 展示
-![image](https://github.com/wrr606/Tetris/tree/master/exhibit_image/sever1)
-![image](https://github.com/wrr606/Tetris/tree/master/exhibit_image/sever2)
-![image](https://github.com/wrr606/Tetris/tree/master/exhibit_image/sever3)
-![image](https://github.com/wrr606/Tetris/tree/master/exhibit_image/sever4)
+![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever1.png)
+![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever2.png)
+![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever3.png)
+![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever4.png)
 
 ### 使用：
 背景直接使用了 https://github.com/VincentGarreau/particles.js 粒子特效來美化畫面
@@ -30,7 +30,7 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
 
 ### 前端展示：
 https://wrr606.github.io/Tetris/Tetris_only_front_end/tetris.html
-![image](https://github.com/wrr606/Tetris/tree/master/exhibit_image/front.png)
+![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/front.png)
 
 ### 製作思路參考：
 
