@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <link rel="stylesheet" media="screen" href="particles/signup.css">
+</head>
+
+<body>
+
+  <div id="particles-js"></div>
+
+  <div id="registration-container">
+    <h1>TETRIS ONLINE</h1>
+    <br>
+    <form id="fm" action="/signup" method="post">
+      <label for="password">E-mail：</label>
+      <br>
+      <input type="text" id="password" name="email" class="f" value="<%= email %>">
+      <br><br>
+      <label for="username">帳號 ID：</label>
+      <br>
+      <input type="text" id="username" name="act" class="f" value="<%= act %>">
+      <br><br>
+      <label for="password">密碼：</label>
+      <br>
+      <input type="password" id="password" name="psw" class="f" value="<%= psw %>">
+      <br><br>
+      <label for="password">確認密碼：</label>
+      <br>
+      <input type="password" id="password" name="psw2" class="f" value="<%= psw2 %>">
+      <% if(s==""){ %>
+        <br><br>
+      <% }else{ %>
+        <h2><%= s %></h2>
+      <% } %>
+      <input type="button" class="sign" value="註冊" onclick="sign()"></input>
+    </form>
+  </div>
+
+  <script src="particles/particles.min.js"></script>
+  <script src="particles/setting.js"></script>
+  <script>
+    function sign() {
+      var button = document.querySelector('.sign');
+      button.style.backgroundColor = 'rgb(156, 76, 0)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() {
+        document.querySelector('#fm').submit();
+      }, 200);
+    }
+    window.addEventListener("keydown", function (input_key) {
+      if (input_key.code == "Enter") {
+        sign()
+      }
+    })
+  </script>
+
+</body>
+
+</html>

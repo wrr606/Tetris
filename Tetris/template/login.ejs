@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <link rel="stylesheet" media="screen" href="particles/login.css">
+</head>
+
+<body>
+
+  <div id="particles-js"></div>
+
+  <div id="registration-container">
+    <h1>TETRIS ONLINE</h1>
+    <br>
+    <form id="fm" action="/" method="post">
+      <label for="username">帳號 ID：</label>
+      <br><br>
+      <input type="text" id="username" name="act" class="f" value="<%= act %>" placeholder="guest">
+      <br><br>
+      <label for="password">密碼：</label>
+      <br><br>
+      <input type="password" id="password" name="psw" class="f" placeholder="guest">
+      <br>
+      <a href="/find">忘記密碼？</a>
+      <% if(wrong!=false){ %>
+        <br><br><br>
+      <% }else{ %>
+        <br>
+        <h2>帳號或密碼有誤</h2>
+        <br>
+      <% } %>
+      <input type="button" class="sign" value="註冊" onclick="sign()"></input>　　　
+      <input type="button" class="log" value="登入" onclick="log()"></input>
+    </form>
+  </div>
+
+  <script src="particles/particles.min.js"></script>
+  <script src="particles/setting.js"></script>
+  <script>
+    function sign() {
+      var button = document.querySelector('.sign');
+      button.style.backgroundColor = 'rgb(156, 76, 0)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() {
+        window.location.href = '/signup';
+      }, 200);
+    }
+    function log() {
+      var button = document.querySelector('.log');
+      button.style.backgroundColor = 'rgb(20, 20, 150)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() {
+        document.querySelector('#fm').submit();
+      }, 200);
+    }
+    window.addEventListener("keydown", function (input_key) {
+      if (input_key.code == "Enter") {
+        log()
+      }
+    })
+  </script>
+
+</body>
+
+</html>
