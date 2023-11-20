@@ -36,7 +36,7 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
 ### 製作思路參考：
 
 https://reurl.cc/OV24AX
-https://reurl.cc/yk5MrO
+https://reurl.cc/Zy331p
 
 ### 程式碼參考：
 
