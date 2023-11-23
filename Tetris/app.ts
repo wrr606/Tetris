@@ -50,7 +50,7 @@ async function login(ctx) {
   }
   if(player==null){
     let wrong=true,act=""
-    ctx.render("./template/login.ejs",{wrong,act});
+    ctx.render("Tetris/template/login.ejs",{wrong,act});
   }
   else
     ctx.response.redirect('/game');
@@ -74,7 +74,7 @@ async function login_post(ctx){
     }
     else if(act==""||psw==""){
       let wrong=false
-      ctx.render("./template/login.ejs",{wrong,act});
+      ctx.render("Tetris/template/login.ejs",{wrong,act});
     }
     else{
       const player = await players.findOne({ act: act });
@@ -85,7 +85,7 @@ async function login_post(ctx){
       }
       else{
         let wrong=false
-        ctx.render("./template/login.ejs",{wrong,act});
+        ctx.render("Tetris/template/login.ejs",{wrong,act});
       }
     }
   }
@@ -98,7 +98,7 @@ async function logout(ctx) {
 
 async function signup(ctx) {
   let s="",email="",act="",psw="",psw2=""
-  ctx.render("./template/signup.ejs",{s,email,act,psw,psw2});
+  ctx.render("Tetris/template/signup.ejs",{s,email,act,psw,psw2});
 }
 
 async function signup_post(ctx){
@@ -122,23 +122,23 @@ async function signup_post(ctx){
       s+="確認密碼 "
     if(s!=""){
       s+="不得為空"
-      ctx.render("./template/signup.ejs",{s,email,act,psw,psw2});
+      ctx.render("Tetris/template/signup.ejs",{s,email,act,psw,psw2});
     }
     else if(psw!=psw2){
       s="密碼與確認密碼不一致"
       psw="",psw2=""
-      ctx.render("./template/signup.ejs",{s,email,act,psw,psw2});
+      ctx.render("Tetris/template/signup.ejs",{s,email,act,psw,psw2});
     }
     else{
       const act_exist = await players.findOne({ act: act });
       const email_exist = await players.findOne({ email: email });
       if(act_exist){
         s="帳號 ID 已被使用"
-        ctx.render("./template/signup.ejs",{s,email,act,psw,psw2});
+        ctx.render("Tetris/template/signup.ejs",{s,email,act,psw,psw2});
       }
       else if(email_exist){
         s="此 E-mail 已被使用"
-        ctx.render("./template/signup.ejs",{s,email,act,psw,psw2});
+        ctx.render("Tetris/template/signup.ejs",{s,email,act,psw,psw2});
       }
       else{
         const insertId = await players.insertOne({
@@ -155,7 +155,7 @@ async function signup_post(ctx){
 
 async function find(ctx) {
   let s="",email="",psw="",psw2=""
-  ctx.render("./template/find.ejs",{s,email,psw,psw2});
+  ctx.render("Tetris/template/find.ejs",{s,email,psw,psw2});
 }
 
 async function find_post(ctx){
@@ -178,11 +178,11 @@ async function find_post(ctx){
       s+="確認密碼 "
     if(s!=""){
       s+="不得為空"
-      ctx.render("./template/find.ejs",{s,email,psw,psw2});
+      ctx.render("Tetris/template/find.ejs",{s,email,psw,psw2});
     }
     else if(!player){
       s="此 E-mail 不存在"
-      ctx.render("./template/find.ejs",{s,email,psw,psw2});
+      ctx.render("Tetris/template/find.ejs",{s,email,psw,psw2});
     }
     else if(params["psw"]==params["psw2"]){
       const { matchedCount, modifiedCount, upsertedId } = await players.updateOne(
@@ -193,7 +193,7 @@ async function find_post(ctx){
     }
     else{
       s="密碼與確認密碼不一致",psw="",psw2=""
-      ctx.render("./template/find.ejs",{s,email,psw,psw2});
+      ctx.render("Tetris/template/find.ejs",{s,email,psw,psw2});
     }
   }
 }
@@ -202,7 +202,7 @@ async function information(ctx) {
   let cur=await ctx.state.session.get('player')
   const player = await players.findOne({ act: cur.act });
   console.log("state",player)
-  ctx.render("./template/information.ejs",{player});
+  ctx.render("Tetris/template/information.ejs",{player});
 }
 
 async function scores_update(ctx){
@@ -231,7 +231,7 @@ async function game(ctx) {
   catch{
     var player=null
   }
-  ctx.render("./template/tetris.ejs",{player});
+  ctx.render("Tetris/template/tetris.ejs",{player});
 }
 
 async function rank(ctx) {
@@ -239,7 +239,7 @@ async function rank(ctx) {
   for(let i=0;i<list.length;i++)
     list[i]._id=i+1
   console.log("rank",list);
-  ctx.render("./template/rank.ejs",{list});
+  ctx.render("Tetris/template/rank.ejs",{list});
 }
 
 async function pb(ctx) {
