@@ -23,7 +23,6 @@ const players = db.collection<user>("players");
 
 const router = new Router()
 
-
 router.get('/', login)
   .post('/',login_post)
   .get('/logout', logout)
