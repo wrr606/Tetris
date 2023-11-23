@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <link rel="stylesheet" media="screen" href="particles/rank.css">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <input type="button" class="re" value="返回" onclick="re()"></input>
+
+  <div id="registration-container">
+    <h1>排行榜</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>名稱</th>
+          <th>分數</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% list.forEach((user, index) => { %>
+          <tr>
+            <td style="background-color: <%= index === 0 ? 'gold' : (index === 1 ? 'silver' : (index === 2 ? '#FF7F00' : '')) %>;"><%= user.act %></td>
+            <td style="background-color: <%= index === 0 ? 'gold' : (index === 1 ? 'silver' : (index === 2 ? '#FF7F00' : '')) %>;"><%= user.scores %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="particles/particles.min.js"></script>
+  <script src="particles/setting.js"></script>
+  <script>
+    function re() {
+      var button = document.querySelector('.re');
+      button.style.backgroundColor = 'rgb(156, 76, 0)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function () {
+        window.location.href = '/game';
+      }, 200);
+    }
+  </script>
+</body>
+
+</html>

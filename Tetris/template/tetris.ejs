@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <link rel="stylesheet" media="screen" href="particles/signup.css">
+  <link rel="stylesheet" href="tetris/tetris.css">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="all">
+
+    <div class="list">
+      <% if(player==null){ %>
+        <div class="id">訪客</div>
+        <div class="container">
+          <input type="button" class="account" value="註冊" onclick="sign()"></input>
+          <input type="button" class="password" value="登入" onclick="login()"></input>
+        </div>
+      <% }else{ %>
+        <div class="id"><%= player.act %></div>
+        <div class="container">
+          <input type="button" class="account" value="帳號" onclick="act()"></input>
+          <input type="button" class="password" value="登出" onclick="logout()"></input>
+        </div>
+      <% } %>
+    </div>
+
+    <div class="left">
+      <div class="hold"></div>
+      <div class="state" action="/scores" method="post">0</div>
+      <input type="button" id="rank" class="rank" value="排行榜" onclick="rank()"></input>
+      <input type="button" class="instruct" value="按鍵說明"></input>
+    </div>
+
+    <div class="grid"></div>
+    <div class="next"></div>
+
+  </div>
+
+  <script src="particles/particles.min.js"></script>
+  <script src="particles/tetris_setting.js"></script>
+  <script src="tetris/tetris.js"></script>
+  <% if(player==null){ %>
+    <script>
+      function sign() {
+        window.location.href = '/signup';
+      }
+      function login() {
+        window.location.href = '/';
+      }
+    </script>
+  <% }else{ %>
+    <script>
+      function act() {
+        window.location.href = '/information';
+      }
+      function logout() {
+        window.location.href = '/logout';
+      }
+    </script>
+  <% } %>
+</body>
+
+</html>

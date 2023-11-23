@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <link rel="stylesheet" media="screen" href="particles/information.css">
+</head>
+
+<body>
+
+  <div id="particles-js"></div>
+
+  <div id="registration-container">
+    <h1><%= player.act %></h1>
+    <br><br>
+    <form id="fm" action="/" method="post">
+      <label class="tit">E-mail：</label>
+      <br><br>
+      <label name="act"><%= player.email %></label>
+      <br><br><br><br>
+      <label class="tit">最高分數：</label>
+      <br><br>
+      <label id="password" name="scores"><%= player.scores %></label>
+      <br><br><br><br>
+      <label class="tit">密碼：</label>
+      <br><br>
+      <label id="password" name="psw"><%= player.psw %></label>
+      <br><br><br><br>
+      <input type="button" class="re" value="返回" onclick="re()"></input>　　　
+      <input type="button" class="adj" value="修改密碼" onclick="adj()"></input>
+    </form>
+  </div>
+
+  <script src="particles/particles.min.js"></script>
+  <script src="particles/setting.js"></script>
+  <script>
+    function re() {
+      var button = document.querySelector('.re');
+      button.style.backgroundColor = 'rgb(156, 76, 0)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() {
+        window.location.href = '/game';
+      }, 200);
+    }
+    function adj() {
+      var button = document.querySelector('.adj');
+      button.style.backgroundColor = 'rgb(20, 20, 150)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() {
+        window.location.href = '/find';
+      }, 200);
+    }
+  </script>
+
+</body>
+
+</html>
