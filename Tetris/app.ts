@@ -6,7 +6,7 @@ import { Bson,MongoClient } from "https://deno.land/x/mongo@v0.32.0/mod.ts";
 const app = new Application()
 const client = new MongoClient();
 
-const TETRIS_KEY = "mongodb+srv://wrr606:7777kkkk@tw.qvruupb.mongodb.net/tw?authMechanism=SCRAM-SHA-1";
+const TETRIS_KEY = Deno.env.get("TETRIS_KEY");
 
 interface user {
   _id: Bson.ObjectId;
