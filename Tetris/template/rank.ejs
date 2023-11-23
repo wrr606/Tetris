@@ -19,12 +19,12 @@
         </tr>
       </thead>
       <tbody>
-        <% for(const [index,act,psw,email,scores] of list){ %>
+        <% list.forEach((user, index) => { %>
           <tr>
-            <td style="background-color: <%= index === 1 ? 'gold' : (index === 2 ? 'silver' : (index === 3 ? '#FF7F00' : '')) %>;"><%= act %></td>
-            <td style="background-color: <%= index === 1 ? 'gold' : (index === 2 ? 'silver' : (index === 3 ? '#FF7F00' : '')) %>;"><%= scores %></td>
+            <td style="background-color: <%= index === 0 ? 'gold' : (index === 1 ? 'silver' : (index === 2 ? '#FF7F00' : '')) %>;"><%= user.act %></td>
+            <td style="background-color: <%= index === 0 ? 'gold' : (index === 1 ? 'silver' : (index === 2 ? '#FF7F00' : '')) %>;"><%= user.scores %></td>
           </tr>
-        <% } %>
+        <% }); %>
       </tbody>
     </table>
   </div>

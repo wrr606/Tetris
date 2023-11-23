@@ -1,14 +1,28 @@
 import { Application, Router, send } from "https://deno.land/x/oak/mod.ts";
-import { DB } from "https://deno.land/x/sqlite/mod.ts";
 import { Session } from "https://deno.land/x/oak_sessions/mod.ts";
 import { viewEngine, ejsEngine, oakAdapter } from "https://deno.land/x/view_engine@v10.5.1/mod.ts"
+import { Bson,MongoClient } from "https://deno.land/x/mongo@v0.32.0/mod.ts";
 
 const app = new Application()
+const client = new MongoClient();
 
-const db = new DB("players.db");
-db.query("CREATE TABLE IF NOT EXISTS players (id INTEGER PRIMARY KEY AUTOINCREMENT, act TEXT UNIQUE, psw TEXT, email TEXT UNIQUE, scores INTEGER)");
+const TETRIS_KEY = "mongodb+srv://wrr606:7777kkkk@tw.qvruupb.mongodb.net/tw?authMechanism=SCRAM-SHA-1";
+
+interface user {
+  _id: Bson.ObjectId;
+  act: string;
+  psw: string;
+  email: string;
+  scores: number;
+}
+
+await client.connect(TETRIS_KEY);
+
+const db = client.database();
+const players = db.collection<user>("players");
 
 const router = new Router()
+
 
 router.get('/', login)
   .post('/',login_post)
@@ -27,27 +41,6 @@ app.use(Session.initMiddleware())
 app.use(viewEngine(oakAdapter, ejsEngine));
 app.use(router.routes())
 app.use(router.allowedMethods())
-
-function sqlcmd(sql, arg1) {
-  console.log('sql:', sql)
-  try {
-    var results = db.query(sql, [arg1])
-    console.log('sqlcmd: results=', results)
-    return results
-  } catch (error) {
-    console.log('sqlcmd error: ', error)
-    throw error
-  }
-}
-
-function userQuery(sql,arg1) {
-  let list = []
-  for (const [id, act, psw, email, scores] of sqlcmd(sql,arg1)) {
-    list.push({id, act, psw, email, scores})
-  }
-  console.log('userQuery: list=', list)
-  return list
-}
 
 async function login(ctx) {
   try{
@@ -85,7 +78,7 @@ async function login_post(ctx){
       ctx.render("template/login.ejs",{wrong,act});
     }
     else{
-      let player=userQuery(`SELECT * FROM players WHERE act=?`,act)[0]
+      const player = await players.findOne({ act: act });
       console.log("player:",player)
       if(player.psw==psw){
         await ctx.state.session.set('player', player);
@@ -138,8 +131,8 @@ async function signup_post(ctx){
       ctx.render("template/signup.ejs",{s,email,act,psw,psw2});
     }
     else{
-      const act_exist=userQuery(`SELECT * FROM players WHERE act=?`,act)[0]
-      const email_exist=userQuery(`SELECT * FROM players WHERE email=?`,email)[0]
+      const act_exist = await players.findOne({ act: act });
+      const email_exist = await players.findOne({ email: email });
       if(act_exist){
         s="帳號 ID 已被使用"
         ctx.render("template/signup.ejs",{s,email,act,psw,psw2});
@@ -149,8 +142,12 @@ async function signup_post(ctx){
         ctx.render("template/signup.ejs",{s,email,act,psw,psw2});
       }
       else{
-        db.query("INSERT INTO players (act,psw,email,scores) VALUES (?,?,?,?)",
-        [act,psw,email,0]);
+        const insertId = await players.insertOne({
+          act: act,
+          psw: psw,
+          email: email,
+          scores: 0,
+        });
         ctx.response.redirect('/');
       }
     }
@@ -171,7 +168,7 @@ async function find_post(ctx){
     for (const [key, value] of pairs) {
       params[key] = value
     }
-    let player = userQuery(`SELECT * FROM players WHERE email=?`,params["email"])[0]
+    const player = await players.findOne({ email: params["email"] });
     console.log("params:",params)
     let s="",email=params["email"],psw=params["psw"],psw2=params["psw2"]
     if(params["email"]=="")
@@ -189,7 +186,10 @@ async function find_post(ctx){
       ctx.render("template/find.ejs",{s,email,psw,psw2});
     }
     else if(params["psw"]==params["psw2"]){
-      db.query("UPDATE players SET psw = ? WHERE email = ?", [params["psw"], params["email"]]);
+      const { matchedCount, modifiedCount, upsertedId } = await players.updateOne(
+        { email: params["email"] },
+        { $set: { psw: params["psw"] } },
+      );
       ctx.response.redirect('/');
     }
     else{
@@ -201,7 +201,7 @@ async function find_post(ctx){
 
 async function information(ctx) {
   let cur=await ctx.state.session.get('player')
-  let player = userQuery(`SELECT * FROM players WHERE act=?`,cur.act)[0]
+  const player = await players.findOne({ act: cur.act });
   console.log("state",player)
   ctx.render("template/information.ejs",{player});
 }
@@ -212,8 +212,12 @@ async function scores_update(ctx){
   console.log('scores=', value)
   try{
     var player=await ctx.state.session.get('player')
-    if(player.scores<value.score)
-      db.query("UPDATE players SET scores = ? WHERE act = ?", [value.score, player.act]);
+    if(player.scores<value.score){
+      const { matchedCount, modifiedCount, upsertedId } = await players.updateOne(
+        { act: player.act },
+        { $set: { scores: value.score } },
+      );
+    }
   }
   catch{
     var player=null
@@ -232,7 +236,10 @@ async function game(ctx) {
 }
 
 async function rank(ctx) {
-  const list = db.query("SELECT * FROM players ORDER BY scores DESC");
+  let list = await players.find({}).sort({ scores: -1 }).toArray();
+  for(let i=0;i<list.length;i++)
+    list[i]._id=i+1
+  console.log("rank",list);
   ctx.render("template/rank.ejs",{list});
 }
 
