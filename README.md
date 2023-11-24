@@ -2,7 +2,7 @@
 具有帳號及排名系統的俄羅斯方塊
 
 ## 後端部分
-Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
+Deno 做為後端，EJS 模板引擎生成前端畫面，使用 MongoDB Atlas 託管資料庫，並部屬在 Deno Deploy 上
 ### 具備功能：
 - 俄羅斯方塊前端部分
 - 帳號系統（註冊、登入、修改密碼）
@@ -10,6 +10,8 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，Sqlite 作為資料庫
 - 支持訪客登入
 
 ### 展示：
+https://tetris.deno.dev/
+
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever1.png)
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever2.png)
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever3.png)
