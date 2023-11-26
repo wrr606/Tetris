@@ -37,13 +37,14 @@ https://tetris.deno.dev/
 
 ### 製作思路參考：
 
-https://reurl.cc/OV24AX
-https://reurl.cc/Zy331p
+- https://reurl.cc/OV24AX
+- https://reurl.cc/Zy331p
 
 ### 程式碼參考：
 
-https://youtu.be/rAUn1Lom6dw - youtube影片
-https://github.com/kubowania/Tetris-Basic - github
+- https://youtu.be/rAUn1Lom6dw - youtube影片
+- https://github.com/kubowania/Tetris-Basic - github
+
 參考她的俄羅斯方塊程式是**如何刷新畫面以及方塊下落作法**
 參考程度**15%**
 
