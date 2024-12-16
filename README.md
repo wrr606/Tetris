@@ -19,7 +19,7 @@ https://tetris.deno.dev/
 
 ### 使用：
 背景直接使用了 https://github.com/VincentGarreau/particles.js 粒子特效來美化畫面
-
+ 
 ## 前端部分
 使用 HTML、CSS、JavaScript 製作
 ### 具備功能：
