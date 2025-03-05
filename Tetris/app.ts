@@ -57,7 +57,7 @@ async function login(ctx) {
 }
 
 async function login_post(ctx){
-  const body=ctx.request.body
+  const body=ctx.request.body()
   if(body.type === "form"){
     const pairs = await body.value
     console.log('pairs=', pairs)
