@@ -10,7 +10,8 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，使用 MongoDB Atlas �
 - 支持訪客登入
 
 ### 展示：
-https://tetris.deno.dev/
+https://tetris.deno.dev/game
+**目前 MongoDB 免費時間已用完，故無法使用登入系統，只能以訪客直接進入遊戲主畫面**
 
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever1.png)
 ![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever2.png)
