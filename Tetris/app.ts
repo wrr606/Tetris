@@ -79,7 +79,7 @@ async function login_post(ctx){
     else{
       const player = await players.findOne({ act: act });
       console.log("player:",player)
-      if(player.psw==psw){
+      if(player && player.psw==psw){
         await ctx.state.session.set('player', player);
         ctx.response.redirect('/game');
       }
