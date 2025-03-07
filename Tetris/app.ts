@@ -1,7 +1,7 @@
-import { Application, Router, send } from "https://deno.land/x/oak/mod.ts";
-import { Session } from "https://deno.land/x/oak_sessions/mod.ts";
-import { viewEngine, ejsEngine, oakAdapter } from "https://deno.land/x/view_engine@v10.5.1/mod.ts"
-import { Bson,MongoClient } from "https://deno.land/x/mongo@v0.32.0/mod.ts";
+import { Application, Router, send } from "https://deno.land/x/oak@v10.6.0/mod.ts";
+import { Session } from "https://deno.land/x/oak_sessions@v9.0.0/mod.ts";
+import { viewEngine, ejsEngine, oakAdapter } from "https://deno.land/x/view_engine@v10.4.0/mod.ts";
+import { Bson, MongoClient } from "https://deno.land/x/mongo@v0.31.2/mod.ts";
 
 const app = new Application()
 const client = new MongoClient();
