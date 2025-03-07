@@ -3,7 +3,7 @@ import { Session } from "https://deno.land/x/oak_sessions@v9.0.0/mod.ts";
 import { viewEngine, ejsEngine, oakAdapter } from "https://deno.land/x/view_engine@v10.5.1/mod.ts";
 import { Bson, MongoClient } from "https://deno.land/x/mongo@v0.32.0/mod.ts";
 
-const app = new Application()
+const app = new Application() 
 const client = new MongoClient();
  
 const TETRIS_KEY = Deno.env.get("TETRIS_KEY");
