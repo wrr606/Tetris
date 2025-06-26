@@ -44,8 +44,3 @@ https://tetris.deno.dev
 
 - https://youtu.be/rAUn1Lom6dw - youtube影片
 - https://github.com/kubowania/Tetris-Basic - github
-
-參考她的俄羅斯方塊程式是**如何刷新畫面以及方塊下落作法**
-參考程度**15%**
-
-使用 ChatGPT **查詢 CSS 參數、JavaScript 內建函式功能及使用**，只用來查詢。
