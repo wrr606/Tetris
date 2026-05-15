@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>TETRIS ONLINE - ?�入</title>
+  <title>TETRIS ONLINE - 登入</title>
   <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/login.css">
 </head>
 <body>
@@ -11,24 +11,24 @@
     <h1>TETRIS ONLINE</h1>
     <br>
     <form id="fm" action="/" method="post">
-      <label for="username">帳�? ID�?/label>
+      <label for="username">帳號 ID：</label>
       <br><br>
       <input type="text" id="username" name="act" class="f" value="{{ act }}" placeholder="guest">
       <br><br>
-      <label for="password">密碼�?/label>
+      <label for="password">密碼：</label>
       <br><br>
       <input type="password" id="password" name="psw" class="f" placeholder="guest">
       <br>
-      <a href="/find">忘�?密碼�?/a>
+      <a href="/find">忘記密碼？</a>
       {% if wrong %}
         <br><br><br>
       {% else %}
         <br>
-        <h2>帳�??��?碼�?�?/h2>
+        <h2>帳號或密碼錯誤</h2>
         <br>
       {% endif %}
-      <input type="button" class="sign" value="註�?" onclick="sign()">?�?�?�
-      <input type="button" class="log" value="?�入" onclick="log()">
+      <input type="button" class="sign" value="註冊" onclick="sign()">
+      <input type="button" class="log" value="登入" onclick="log()">
     </form>
   </div>
 

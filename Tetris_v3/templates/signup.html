@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>TETRIS ONLINE - 註�?</title>
+  <title>TETRIS ONLINE - 註冊</title>
   <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/signup.css">
 </head>
 <body>
@@ -11,19 +11,19 @@
     <h1>TETRIS ONLINE</h1>
     <br>
     <form id="fm" action="/signup" method="post">
-      <label for="email">E-mail�?/label>
+      <label for="email">E-mail：</label>
       <br>
       <input type="text" id="email" name="email" class="f" value="{{ email }}">
       <br><br>
-      <label for="username">帳�? ID�?/label>
+      <label for="username">帳號 ID：</label>
       <br>
       <input type="text" id="username" name="act" class="f" value="{{ act }}">
       <br><br>
-      <label for="psw">密碼�?/label>
+      <label for="psw">密碼：</label>
       <br>
       <input type="password" id="psw" name="psw" class="f" value="{{ psw }}">
       <br><br>
-      <label for="psw2">確�?密碼�?/label>
+      <label for="psw2">確認密碼：</label>
       <br>
       <input type="password" id="psw2" name="psw2" class="f" value="{{ psw2 }}">
       {% if s == "" %}
@@ -31,7 +31,7 @@
       {% else %}
         <h2>{{ s }}</h2>
       {% endif %}
-      <input type="button" class="sign" value="註�?" onclick="sign()">
+      <input type="button" class="sign" value="註冊" onclick="sign()">
     </form>
   </div>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>TETRIS ONLINE - ?��?密碼</title>
+  <title>TETRIS ONLINE - 忘記密碼</title>
   <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/find.css">
 </head>
 <body>
@@ -11,15 +11,15 @@
     <h1>TETRIS ONLINE</h1>
     <br>
     <form id="fm" action="/find" method="post">
-      <label for="email">E-mail�?/label>
+      <label for="email">E-mail：</label>
       <br><br>
       <input type="text" id="email" name="email" class="f" value="{{ email }}">
       <br><br>
-      <label for="psw">密碼�?/label>
+      <label for="psw">密碼：</label>
       <br><br>
       <input type="password" id="psw" name="psw" class="f" value="{{ psw }}">
       <br><br>
-      <label for="psw2">確�?密碼�?/label>
+      <label for="psw2">確認密碼：</label>
       <br><br>
       <input type="password" id="psw2" name="psw2" class="f" value="{{ psw2 }}">
       {% if s != "" %}
@@ -27,7 +27,7 @@
       {% else %}
         <br><br>
       {% endif %}
-      <input type="button" class="find" value="?�改密碼" onclick="bt()">
+      <input type="button" class="find" value="更改密碼" onclick="bt()">
     </form>
   </div>
 

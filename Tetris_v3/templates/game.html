@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>TETRIS ONLINE - ?�戲</title>
+  <title>TETRIS ONLINE - 遊戲</title>
   <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/signup.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/tetris/tetris.css">
 </head>
@@ -13,14 +13,14 @@
       {% if player %}
         <div class="id">{{ player.act }}</div>
         <div class="container">
-          <input type="button" class="account" value="帳�?" onclick="act()">
-          <input type="button" class="password" value="?�出" onclick="logout()">
+          <input type="button" class="account" value="帳號" onclick="act()">
+          <input type="button" class="password" value="登出" onclick="logout()">
         </div>
       {% else %}
         <div class="id">訪客</div>
         <div class="container">
-          <input type="button" class="account" value="註�?" onclick="sign()">
-          <input type="button" class="password" value="?�入" onclick="login()">
+          <input type="button" class="account" value="註冊" onclick="sign()">
+          <input type="button" class="password" value="登入" onclick="login()">
         </div>
       {% endif %}
     </div>
@@ -28,8 +28,8 @@
     <div class="left">
       <div class="hold"></div>
       <div class="state">0</div>
-      <input type="button" id="rank" class="rank" value="?��?�? onclick="rank()">
-      <input type="button" class="instruct" value="?�鍵說�?">
+      <input type="button" id="rank" class="rank" value="排行榜" onclick="rank()">
+      <input type="button" class="instruct" value="按鍵說明">
     </div>
 
     <div class="grid"></div>

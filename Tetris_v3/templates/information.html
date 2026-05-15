@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>TETRIS ONLINE - 帳�?資�?</title>
+  <title>TETRIS ONLINE - 帳號資料</title>
   <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/information.css">
 </head>
 <body>
@@ -11,19 +11,19 @@
     <h1>{{ player.act }}</h1>
     <br><br>
     <form id="fm" action="/" method="post">
-      <label class="tit">E-mail�?/label>
+      <label class="tit">E-mail：</label>
       <br><br>
       <label>{{ player.email }}</label>
       <br><br><br><br>
-      <label class="tit">?�高�??��?</label>
+      <label class="tit">最高分數：</label>
       <br><br>
       <label>{{ player.scores }}</label>
       <br><br><br><br>
-      <label class="tit">密碼�?/label>
+      <label class="tit">密碼：</label>
       <br><br>
       <label>{{ player.psw }}</label>
       <br><br><br><br>
-      <input type="button" class="re" value="返�?" onclick="re()">?�?�?�
+      <input type="button" class="re" value="返回" onclick="re()">
       <input type="button" class="adj" value="修改密碼" onclick="adj()">
     </form>
   </div>
