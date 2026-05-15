@@ -11,6 +11,7 @@ binding = "DB"
 database_name = "tetris-db"
 database_id = "f052f685-2f9c-4cfe-afed-1c6cbe4f203e"
 
+# KV 綁定
 [[kv_namespaces]]
 binding = "SESSIONS"
 id = "defe7ba8ca2346c6b578b23384913cf1"
