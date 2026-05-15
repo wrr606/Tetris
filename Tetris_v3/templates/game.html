@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TETRIS ONLINE - ?Šæˆ²</title>
+  <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/signup.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/tetris/tetris.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="all">
+    <div class="list">
+      {% if player %}
+        <div class="id">{{ player.act }}</div>
+        <div class="container">
+          <input type="button" class="account" value="å¸³è?" onclick="act()">
+          <input type="button" class="password" value="?»å‡º" onclick="logout()">
+        </div>
+      {% else %}
+        <div class="id">è¨ªå®¢</div>
+        <div class="container">
+          <input type="button" class="account" value="è¨»å?" onclick="sign()">
+          <input type="button" class="password" value="?»å…¥" onclick="login()">
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="left">
+      <div class="hold"></div>
+      <div class="state">0</div>
+      <input type="button" id="rank" class="rank" value="?’è?æ¦? onclick="rank()">
+      <input type="button" class="instruct" value="?‰éµèªªæ?">
+    </div>
+
+    <div class="grid"></div>
+    <div class="next"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/tetris_setting.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/tetris/tetris.js"></script>
+  {% if player %}
+  <script>
+    function act()    { window.location.href = '/information'; }
+    function logout() { window.location.href = '/logout'; }
+    function rank()   { window.location.href = '/rank'; }
+  </script>
+  {% else %}
+  <script>
+    function sign()  { window.location.href = '/signup'; }
+    function login() { window.location.href = '/'; }
+    function rank()  { window.location.href = '/rank'; }
+  </script>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+name = "Tetris_v3"
+main = "build/worker/shim.mjs"
+compatibility_date = "2026-05-15"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+# D1 資料庫綁定
+[[d1_databases]]
+binding = "DB"
+database_name = "tetris-db"
+database_id = "f052f685-2f9c-4cfe-afed-1c6cbe4f203e"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "defe7ba8ca2346c6b578b23384913cf1"
+
+[vars]
+ENVIRONMENT = "production"

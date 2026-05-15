@@ -12,10 +12,10 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，使用 MongoDB Atlas �
 ### 展示：
 https://tetris.deno.dev
 
-![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever1.png)
-![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever2.png)
-![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever3.png)
-![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/sever4.png)
+![image](https://github.com/wrr606/Tetris/blob/main/README_image/sever1.png)
+![image](https://github.com/wrr606/Tetris/blob/main/README_image/sever2.png)
+![image](https://github.com/wrr606/Tetris/blob/main/README_image/sever3.png)
+![image](https://github.com/wrr606/Tetris/blob/main/README_image/sever4.png)
 
 ### 使用：
 背景直接使用了 https://github.com/VincentGarreau/particles.js 粒子特效來美化畫面
@@ -31,16 +31,6 @@ https://tetris.deno.dev
 - 順逆時鐘旋轉、180 度旋轉
 
 ### 前端展示：
-網站：https://wrr606.github.io/Tetris/Tetris_only_front_end/tetris.html
+網站：https://wrr606.github.io/Tetris/Tetris_v1.0/tetris.html
 
-![image](https://github.com/wrr606/Tetris/blob/main/exhibit_image/front.png)
-
-### 製作思路參考：
-
-- https://reurl.cc/OV24AX
-- https://reurl.cc/Zy331p
-
-### 程式碼參考：
-
-- https://youtu.be/rAUn1Lom6dw - youtube影片
-- https://github.com/kubowania/Tetris-Basic - github
+![image](https://github.com/wrr606/Tetris/blob/main/README_image/front.png)

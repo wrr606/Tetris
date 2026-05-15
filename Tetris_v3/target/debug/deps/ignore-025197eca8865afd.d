@@ -1,0 +1,12 @@
+D:\TETR\Tetris\Tetris_v3\target\debug\deps\ignore-025197eca8865afd.d: C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\lib.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\default_types.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\dir.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\gitignore.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\overrides.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\pathutil.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\types.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\walk.rs
+
+D:\TETR\Tetris\Tetris_v3\target\debug\deps\libignore-025197eca8865afd.rmeta: C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\lib.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\default_types.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\dir.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\gitignore.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\overrides.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\pathutil.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\types.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\walk.rs
+
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\lib.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\default_types.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\dir.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\gitignore.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\overrides.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\pathutil.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\types.rs:
+C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ignore-0.4.25\src\walk.rs:

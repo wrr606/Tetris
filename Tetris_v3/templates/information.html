@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TETRIS ONLINE - å¸³è?è³‡è?</title>
+  <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/information.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div id="registration-container">
+    <h1>{{ player.act }}</h1>
+    <br><br>
+    <form id="fm" action="/" method="post">
+      <label class="tit">E-mailï¼?/label>
+      <br><br>
+      <label>{{ player.email }}</label>
+      <br><br><br><br>
+      <label class="tit">?€é«˜å??¸ï?</label>
+      <br><br>
+      <label>{{ player.scores }}</label>
+      <br><br><br><br>
+      <label class="tit">å¯†ç¢¼ï¼?/label>
+      <br><br>
+      <label>{{ player.psw }}</label>
+      <br><br><br><br>
+      <input type="button" class="re" value="è¿”å?" onclick="re()">?€?€?€
+      <input type="button" class="adj" value="ä¿®æ”¹å¯†ç¢¼" onclick="adj()">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/setting.js"></script>
+  <script>
+    function re() {
+      var button = document.querySelector('.re');
+      button.style.backgroundColor = 'rgb(156, 76, 0)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() { window.location.href = '/game'; }, 200);
+    }
+    function adj() {
+      var button = document.querySelector('.adj');
+      button.style.backgroundColor = 'rgb(20, 20, 150)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() { window.location.href = '/find'; }, 200);
+    }
+  </script>
+</body>
+</html>

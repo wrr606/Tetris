@@ -1,0 +1,2 @@
+fn(axum::extract::State<AppState>, HeaderMap, Form<ScoresForm>) -> impl std::future::Future<Output = http::Response<axum::body::Body>> {scores_post}
+fn(axum::extract::State<AppState>, HeaderMap, Form<ScoresForm>) -> impl std::future::Future<Output = http::Response<axum::body::Body>> {scores_post}: Handler<_, _>

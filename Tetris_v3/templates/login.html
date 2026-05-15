@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TETRIS ONLINE - ?»å…¥</title>
+  <link rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/login.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div id="registration-container">
+    <h1>TETRIS ONLINE</h1>
+    <br>
+    <form id="fm" action="/" method="post">
+      <label for="username">å¸³è? IDï¼?/label>
+      <br><br>
+      <input type="text" id="username" name="act" class="f" value="{{ act }}" placeholder="guest">
+      <br><br>
+      <label for="password">å¯†ç¢¼ï¼?/label>
+      <br><br>
+      <input type="password" id="password" name="psw" class="f" placeholder="guest">
+      <br>
+      <a href="/find">å¿˜è?å¯†ç¢¼ï¼?/a>
+      {% if wrong %}
+        <br><br><br>
+      {% else %}
+        <br>
+        <h2>å¸³è??–å?ç¢¼æ?èª?/h2>
+        <br>
+      {% endif %}
+      <input type="button" class="sign" value="è¨»å?" onclick="sign()">?€?€?€
+      <input type="button" class="log" value="?»å…¥" onclick="log()">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wrr606/Tetris/Tetris/template/particles/setting.js"></script>
+  <script>
+    function sign() {
+      var button = document.querySelector('.sign');
+      button.style.backgroundColor = 'rgb(156, 76, 0)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() { window.location.href = '/signup'; }, 200);
+    }
+    function log() {
+      var button = document.querySelector('.log');
+      button.style.backgroundColor = 'rgb(20, 20, 150)';
+      button.style.transform = 'scale(0.95)';
+      setTimeout(function() { document.querySelector('#fm').submit(); }, 200);
+    }
+    window.addEventListener("keydown", function(input_key) {
+      if (input_key.code == "Enter") { log(); }
+    });
+  </script>
+</body>
+</html>

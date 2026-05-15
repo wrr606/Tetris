@@ -1,0 +1,2 @@
+fn(axum::extract::State<AppState>, Form<SignupForm>) -> impl std::future::Future<Output = http::Response<axum::body::Body>> {signup_post}
+fn(axum::extract::State<AppState>, Form<SignupForm>) -> impl std::future::Future<Output = http::Response<axum::body::Body>> {signup_post}: Handler<_, AppState>
