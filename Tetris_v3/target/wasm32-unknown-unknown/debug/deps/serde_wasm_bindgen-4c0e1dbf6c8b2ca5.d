@@ -1,9 +1,0 @@
-D:\TETR\tetris-worker\target\wasm32-unknown-unknown\debug\deps\serde_wasm_bindgen-4c0e1dbf6c8b2ca5.d: C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\lib.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\de.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\error.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\ser.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\../README.md
-
-D:\TETR\tetris-worker\target\wasm32-unknown-unknown\debug\deps\libserde_wasm_bindgen-4c0e1dbf6c8b2ca5.rmeta: C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\lib.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\de.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\error.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\ser.rs C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\../README.md
-
-C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\lib.rs:
-C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\de.rs:
-C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\error.rs:
-C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\ser.rs:
-C:\Users\Function\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-wasm-bindgen-0.5.0\src\../README.md:

@@ -1,2 +1,0 @@
-fn(axum::extract::State<AppState>) -> impl std::future::Future<Output = Html<std::string::String>> {rank_get}
-fn(axum::extract::State<AppState>) -> impl std::future::Future<Output = Html<std::string::String>> {rank_get}: Handler<_, _>

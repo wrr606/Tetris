@@ -1,2 +1,0 @@
-fn(axum::extract::State<AppState>, Form<FindForm>) -> impl std::future::Future<Output = http::Response<axum::body::Body>> {find_post}
-fn(axum::extract::State<AppState>, Form<FindForm>) -> impl std::future::Future<Output = http::Response<axum::body::Body>> {find_post}: Handler<_, AppState>

@@ -1,2 +1,0 @@
-fn(axum::extract::State<AppState>, HeaderMap) -> impl std::future::Future<Output = axum::http::Response<axum::body::Body>> {information_get}
-fn(axum::extract::State<AppState>, HeaderMap) -> impl std::future::Future<Output = axum::http::Response<axum::body::Body>> {information_get}: Handler<_, _>
