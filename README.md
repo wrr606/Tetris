@@ -3,7 +3,7 @@
 
 本專案經歷了框架重構，從原本的 Deno 框架重構為基於 Rust 的 Axum 架構，當前版本為 Tetris_v3。
 
-## 後端部分
+## Tetris_v3
 後端採用 Rust 語言與 Axum 框架開發，並編譯為 WebAssembly (Wasm) 部署於 Cloudflare Workers。
 
 前端使用 Askama 進行模板渲染。
@@ -109,6 +109,6 @@ Deno 做為後端，EJS 模板引擎生成前端畫面，使用 MongoDB Atlas �
 只有俄羅斯方塊的前端部分，使用 HTML、CSS、JavaScript 製作
 
 #### 展示：
-網站：https://wrr606.github.io/Tetris/Tetris_v1.0/tetris.html
+網站：https://wrr606.github.io/Tetris/Tetris_v1/tetris.html
 
 ![image](https://github.com/wrr606/Tetris/blob/main/README_image/front.png)
