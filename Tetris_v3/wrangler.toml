@@ -1,11 +1,10 @@
-name = "Tetris_v3"
+name = "tetris-v3"
 main = "build/worker/shim.mjs"
 compatibility_date = "2026-05-15"
 
 [build]
 command = "cargo install -q worker-build && worker-build --release"
 
-# D1 資料庫綁定
 [[d1_databases]]
 binding = "DB"
 database_name = "tetris-db"
