@@ -232,9 +232,12 @@ async fn signup_post(
         .first::<serde_json::Value>(None).await.unwrap_or(None);
     if email_exists.is_some() { signup_err!("此 E-mail 已被使用"); }
 
-    db.prepare("INSERT INTO players (act, psw, email, scores) VALUES (?1, ?2, ?3, 0)")
+    match db.prepare("INSERT INTO players (act, psw, email, scores) VALUES (?1, ?2, ?3, 0)")
         .bind(&[form.act.into(), form.psw.into(), form.email.into()]).unwrap()
-        .run().await.unwrap();
+        .run().await {
+            Ok(_) => (),
+            Err(_) => signup_err!("資料庫錯誤 (可能尚未初始化)"),
+        };
 
     Redirect::to("/").into_response()
 }
@@ -284,9 +287,12 @@ async fn find_post(
     if player.is_none() { find_err!("此 E-mail 不存在", &form.psw, &form.psw2); }
     if form.psw != form.psw2 { find_err!("密碼與確認密碼不一致", &"", &""); }
 
-    db.prepare("UPDATE players SET psw = ?1 WHERE email = ?2")
+    match db.prepare("UPDATE players SET psw = ?1 WHERE email = ?2")
         .bind(&[form.psw.into(), form.email.into()]).unwrap()
-        .run().await.unwrap();
+        .run().await {
+            Ok(_) => (),
+            Err(_) => find_err!("資料庫錯誤 (更新失敗)", &form.psw, &form.psw2),
+        };
 
     Redirect::to("/").into_response()
 }
@@ -348,16 +354,28 @@ async fn scores_post(
 }
 
 #[worker::send]
-async fn rank_get(State(state): State<AppState>) -> Html<String> {
+async fn rank_get(State(state): State<AppState>) -> Response {
     let env = &state.env.0;
     let db = env.d1("DB").unwrap();
-    let results = db
+    let results = match db
         .prepare("SELECT id, act, psw, email, scores FROM players ORDER BY scores DESC")
-        .all().await.unwrap();
-    let list = results.results::<Player>().unwrap_or_default();
+        .all().await {
+            Ok(r) => r,
+            Err(e) => return Html(format!("Database error: {:?}", e)).into_response(),
+        };
+    
+    let list = match results.results::<Player>() {
+        Ok(l) => l,
+        Err(e) => return Html(format!("Deserialization error: {:?}", e)).into_response(),
+    };
+
     let mut ctx = Context::new();
     ctx.insert("list", &list);
-    Html(state.tera.render("rank.html", &ctx).unwrap())
+    
+    match state.tera.render("rank.html", &ctx) {
+        Ok(html) => Html(html).into_response(),
+        Err(e) => Html(format!("Template error: {:?}", e)).into_response(),
+    }
 }
 
 // ─── Entry Point ─────────────────────────────────────────────────────────────
