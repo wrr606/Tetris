@@ -1,4 +1,4 @@
-name = "tetris-v3"
+name = "tetris"
 main = "build/worker/shim.mjs"
 compatibility_date = "2026-05-15"
 
