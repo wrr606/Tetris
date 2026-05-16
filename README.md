@@ -24,7 +24,7 @@
 - 順逆時鐘旋轉、180 度旋轉
 
 ### 展示：
-https://tetris.111110517.xyz
+https://tetris.wrr606.com
 
 ![image](https://github.com/wrr606/Tetris/blob/main/README_image/sever1.png)
 ![image](https://github.com/wrr606/Tetris/blob/main/README_image/sever2.png)
